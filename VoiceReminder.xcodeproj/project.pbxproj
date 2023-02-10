@@ -9,23 +9,29 @@
 /* Begin PBXBuildFile section */
 		FA7E95EF29968C6100DE4A9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E95EE29968C6100DE4A9C /* AppDelegate.swift */; };
 		FA7E95F129968C6100DE4A9C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E95F029968C6100DE4A9C /* SceneDelegate.swift */; };
-		FA7E95F329968C6100DE4A9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E95F229968C6100DE4A9C /* ViewController.swift */; };
 		FA7E95F629968C6100DE4A9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA7E95F429968C6100DE4A9C /* Main.storyboard */; };
 		FA7E95F929968C6100DE4A9C /* VoiceReminder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA7E95F729968C6100DE4A9C /* VoiceReminder.xcdatamodeld */; };
 		FA7E95FB29968C6100DE4A9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7E95FA29968C6100DE4A9C /* Assets.xcassets */; };
 		FA7E95FE29968C6100DE4A9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA7E95FC29968C6100DE4A9C /* LaunchScreen.storyboard */; };
+		FA7E960F29968F8400DE4A9C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E960E29968F8400DE4A9C /* MainViewController.swift */; };
+		FA7E9635299693B500DE4A9C /* Voice+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E9633299693B500DE4A9C /* Voice+CoreDataClass.swift */; };
+		FA7E9636299693B500DE4A9C /* Voice+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E9634299693B500DE4A9C /* Voice+CoreDataProperties.swift */; };
+		FA7E963D2996943D00DE4A9C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E963C2996943D00DE4A9C /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA7E95EB29968C6100DE4A9C /* VoiceReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7E95EE29968C6100DE4A9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA7E95F029968C6100DE4A9C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA7E95F229968C6100DE4A9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FA7E95F529968C6100DE4A9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA7E95F829968C6100DE4A9C /* VoiceReminder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VoiceReminder.xcdatamodel; sourceTree = "<group>"; };
 		FA7E95FA29968C6100DE4A9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA7E95FD29968C6100DE4A9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA7E95FF29968C6100DE4A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA7E960E29968F8400DE4A9C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FA7E9633299693B500DE4A9C /* Voice+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Voice+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FA7E9634299693B500DE4A9C /* Voice+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Voice+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FA7E963C2996943D00DE4A9C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +64,107 @@
 		FA7E95ED29968C6100DE4A9C /* VoiceReminder */ = {
 			isa = PBXGroup;
 			children = (
-				FA7E95EE29968C6100DE4A9C /* AppDelegate.swift */,
+				FA7E960629968E8900DE4A9C /* Resources */,
+				FA7E960529968E1D00DE4A9C /* App */,
+				FA7E960729968EDB00DE4A9C /* Moduls */,
+			);
+			path = VoiceReminder;
+			sourceTree = "<group>";
+		};
+		FA7E960529968E1D00DE4A9C /* App */ = {
+			isa = PBXGroup;
+			children = (
 				FA7E95F029968C6100DE4A9C /* SceneDelegate.swift */,
-				FA7E95F229968C6100DE4A9C /* ViewController.swift */,
-				FA7E95F429968C6100DE4A9C /* Main.storyboard */,
+				FA7E95EE29968C6100DE4A9C /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FA7E960629968E8900DE4A9C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				FA7E95FA29968C6100DE4A9C /* Assets.xcassets */,
+				FA7E95F429968C6100DE4A9C /* Main.storyboard */,
 				FA7E95FC29968C6100DE4A9C /* LaunchScreen.storyboard */,
 				FA7E95FF29968C6100DE4A9C /* Info.plist */,
 				FA7E95F729968C6100DE4A9C /* VoiceReminder.xcdatamodeld */,
 			);
-			path = VoiceReminder;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FA7E960729968EDB00DE4A9C /* Moduls */ = {
+			isa = PBXGroup;
+			children = (
+				FA7E960A29968F1600DE4A9C /* ListVoiceModul */,
+				FA7E960829968EE700DE4A9C /* MainScreenModul */,
+			);
+			path = Moduls;
+			sourceTree = "<group>";
+		};
+		FA7E960829968EE700DE4A9C /* MainScreenModul */ = {
+			isa = PBXGroup;
+			children = (
+				FA7E960C29968F5F00DE4A9C /* ModelView */,
+				FA7E960B29968F4C00DE4A9C /* View */,
+			);
+			path = MainScreenModul;
+			sourceTree = "<group>";
+		};
+		FA7E960A29968F1600DE4A9C /* ListVoiceModul */ = {
+			isa = PBXGroup;
+			children = (
+				FA7E963A2996940600DE4A9C /* ViewModel */,
+				FA7E9639299693FF00DE4A9C /* View */,
+				FA7E9638299693F500DE4A9C /* Model */,
+				FA7E9637299693D800DE4A9C /* CoreData */,
+			);
+			path = ListVoiceModul;
+			sourceTree = "<group>";
+		};
+		FA7E960B29968F4C00DE4A9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA7E960E29968F8400DE4A9C /* MainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA7E960C29968F5F00DE4A9C /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+				FA7E963C2996943D00DE4A9C /* MainViewModel.swift */,
+			);
+			path = ModelView;
+			sourceTree = "<group>";
+		};
+		FA7E9637299693D800DE4A9C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FA7E9634299693B500DE4A9C /* Voice+CoreDataProperties.swift */,
+				FA7E9633299693B500DE4A9C /* Voice+CoreDataClass.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FA7E9638299693F500DE4A9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA7E9639299693FF00DE4A9C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA7E963A2996940600DE4A9C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +238,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA7E95F329968C6100DE4A9C /* ViewController.swift in Sources */,
+				FA7E963D2996943D00DE4A9C /* MainViewModel.swift in Sources */,
 				FA7E95EF29968C6100DE4A9C /* AppDelegate.swift in Sources */,
 				FA7E95F929968C6100DE4A9C /* VoiceReminder.xcdatamodeld in Sources */,
+				FA7E9636299693B500DE4A9C /* Voice+CoreDataProperties.swift in Sources */,
+				FA7E9635299693B500DE4A9C /* Voice+CoreDataClass.swift in Sources */,
 				FA7E95F129968C6100DE4A9C /* SceneDelegate.swift in Sources */,
+				FA7E960F29968F8400DE4A9C /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +393,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U3T8H6J3Z8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VoiceReminder/Info.plist;
+				INFOPLIST_FILE = VoiceReminder/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -321,7 +421,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U3T8H6J3Z8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VoiceReminder/Info.plist;
+				INFOPLIST_FILE = VoiceReminder/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
