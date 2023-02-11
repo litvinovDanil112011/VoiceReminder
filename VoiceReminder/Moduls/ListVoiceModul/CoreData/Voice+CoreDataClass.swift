@@ -11,5 +11,8 @@ import CoreData
 
 @objc(Voice)
 public class Voice: NSManagedObject {
-
+    convenience init() {
+        let coreData = CoreDataManager()
+        self.init(entity: coreData.entityForName(entity: "Voice"), insertInto: coreData.context)
+    }
 }
