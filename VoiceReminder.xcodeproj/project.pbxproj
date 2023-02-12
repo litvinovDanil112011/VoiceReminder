@@ -15,9 +15,12 @@
 		FA4A51FB2998D877003F0535 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A51FA2998D877003F0535 /* EventsViewController.swift */; };
 		FA4A51FD2998DBB8003F0535 /* ExtensionsEventLayuot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A51FC2998DBB8003F0535 /* ExtensionsEventLayuot.swift */; };
 		FA4A51FF2998E2DB003F0535 /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A51FE2998E2DB003F0535 /* EventsViewModel.swift */; };
-		FA4A52032998E7D0003F0535 /* EventEN+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A52012998E7D0003F0535 /* EventEN+CoreDataClass.swift */; };
-		FA4A52042998E7D0003F0535 /* EventEN+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A52022998E7D0003F0535 /* EventEN+CoreDataProperties.swift */; };
 		FA4A52072998EF68003F0535 /* ExtionsionPhotoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A52062998EF68003F0535 /* ExtionsionPhotoLibrary.swift */; };
+		FA4A520C29991E71003F0535 /* EventVoiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A520B29991E71003F0535 /* EventVoiceManager.swift */; };
+		FA4A520E2999263B003F0535 /* ListEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A520D2999263B003F0535 /* ListEventsViewController.swift */; };
+		FA4A5211299928B9003F0535 /* EventEN+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A520F299928B9003F0535 /* EventEN+CoreDataClass.swift */; };
+		FA4A5212299928B9003F0535 /* EventEN+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A5210299928B9003F0535 /* EventEN+CoreDataProperties.swift */; };
+		FA4A521529992EE6003F0535 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A521429992EE6003F0535 /* DetailViewController.swift */; };
 		FA7E95EF29968C6100DE4A9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E95EE29968C6100DE4A9C /* AppDelegate.swift */; };
 		FA7E95F129968C6100DE4A9C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E95F029968C6100DE4A9C /* SceneDelegate.swift */; };
 		FA7E95F629968C6100DE4A9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA7E95F429968C6100DE4A9C /* Main.storyboard */; };
@@ -39,9 +42,12 @@
 		FA4A51FA2998D877003F0535 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		FA4A51FC2998DBB8003F0535 /* ExtensionsEventLayuot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsEventLayuot.swift; sourceTree = "<group>"; };
 		FA4A51FE2998E2DB003F0535 /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
-		FA4A52012998E7D0003F0535 /* EventEN+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventEN+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FA4A52022998E7D0003F0535 /* EventEN+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventEN+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FA4A52062998EF68003F0535 /* ExtionsionPhotoLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtionsionPhotoLibrary.swift; sourceTree = "<group>"; };
+		FA4A520B29991E71003F0535 /* EventVoiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVoiceManager.swift; sourceTree = "<group>"; };
+		FA4A520D2999263B003F0535 /* ListEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEventsViewController.swift; sourceTree = "<group>"; };
+		FA4A520F299928B9003F0535 /* EventEN+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventEN+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FA4A5210299928B9003F0535 /* EventEN+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventEN+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FA4A521429992EE6003F0535 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FA7E95EB29968C6100DE4A9C /* VoiceReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7E95EE29968C6100DE4A9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA7E95F029968C6100DE4A9C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				FA4A51EF2996A25D003F0535 /* VoiceRecordManager.swift */,
+				FA4A520B29991E71003F0535 /* EventVoiceManager.swift */,
 			);
 			name = VoiceRecordManager;
 			sourceTree = "<group>";
@@ -103,6 +110,8 @@
 		FA4A51F62997F8AD003F0535 /* New Modul */ = {
 			isa = PBXGroup;
 			children = (
+				FA4A52092998FD5F003F0535 /* DetailEventModul */,
+				FA4A52082998FD06003F0535 /* ListEventModul */,
 				FA4A51F72998D80C003F0535 /* EventModul */,
 			);
 			path = "New Modul";
@@ -140,7 +149,7 @@
 		FA4A52002998E713003F0535 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FA4A52022998E7D0003F0535 /* EventEN+CoreDataProperties.swift */,
+				FA4A5210299928B9003F0535 /* EventEN+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -148,9 +157,41 @@
 		FA4A52052998E803003F0535 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				FA4A52012998E7D0003F0535 /* EventEN+CoreDataClass.swift */,
+				FA4A520F299928B9003F0535 /* EventEN+CoreDataClass.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FA4A52082998FD06003F0535 /* ListEventModul */ = {
+			isa = PBXGroup;
+			children = (
+				FA4A520A29990E41003F0535 /* View */,
+			);
+			path = ListEventModul;
+			sourceTree = "<group>";
+		};
+		FA4A52092998FD5F003F0535 /* DetailEventModul */ = {
+			isa = PBXGroup;
+			children = (
+				FA4A521329992EC9003F0535 /* View */,
+			);
+			path = DetailEventModul;
+			sourceTree = "<group>";
+		};
+		FA4A520A29990E41003F0535 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA4A520D2999263B003F0535 /* ListEventsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA4A521329992EC9003F0535 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA4A521429992EE6003F0535 /* DetailViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FA7E95E229968C6100DE4A9C = {
@@ -343,24 +384,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4A520C29991E71003F0535 /* EventVoiceManager.swift in Sources */,
 				FA4A51FD2998DBB8003F0535 /* ExtensionsEventLayuot.swift in Sources */,
 				FA4A51FB2998D877003F0535 /* EventsViewController.swift in Sources */,
 				FA4A52072998EF68003F0535 /* ExtionsionPhotoLibrary.swift in Sources */,
-				FA4A52042998E7D0003F0535 /* EventEN+CoreDataProperties.swift in Sources */,
+				FA4A520E2999263B003F0535 /* ListEventsViewController.swift in Sources */,
 				FA7E963D2996943D00DE4A9C /* MainViewModel.swift in Sources */,
+				FA4A521529992EE6003F0535 /* DetailViewController.swift in Sources */,
 				FA4A51EC2996999B003F0535 /* MainLayuot.swift in Sources */,
 				FA7E95EF29968C6100DE4A9C /* AppDelegate.swift in Sources */,
+				FA4A5211299928B9003F0535 /* EventEN+CoreDataClass.swift in Sources */,
 				FA7E95F929968C6100DE4A9C /* VoiceReminder.xcdatamodeld in Sources */,
 				FA7E9636299693B500DE4A9C /* Voice+CoreDataProperties.swift in Sources */,
 				FA7E9635299693B500DE4A9C /* Voice+CoreDataClass.swift in Sources */,
 				FA7E95F129968C6100DE4A9C /* SceneDelegate.swift in Sources */,
 				FA4A51FF2998E2DB003F0535 /* EventsViewModel.swift in Sources */,
+				FA4A5212299928B9003F0535 /* EventEN+CoreDataProperties.swift in Sources */,
 				FA7E960F29968F8400DE4A9C /* MainViewController.swift in Sources */,
 				FA4A51EA29969699003F0535 /* CreatorView.swift in Sources */,
 				FA4A51F52997B1AE003F0535 /* ListVoiceViewController.swift in Sources */,
 				FA4A51F02996A25D003F0535 /* VoiceRecordManager.swift in Sources */,
 				FA4A51F32996A93E003F0535 /* CoreDataManager.swift in Sources */,
-				FA4A52032998E7D0003F0535 /* EventEN+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

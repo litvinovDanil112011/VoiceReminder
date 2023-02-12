@@ -19,6 +19,7 @@ extension EventEN {
     @NSManaged public var imageAT: Data?
     @NSManaged public var titleAT: String?
     @NSManaged public var voiceAT: Data?
+    @NSManaged public var date: Date?
 
 }
 

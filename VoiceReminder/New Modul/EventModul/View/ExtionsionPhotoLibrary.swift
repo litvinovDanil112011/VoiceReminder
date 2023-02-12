@@ -33,6 +33,7 @@ extension EventsViewController: UIImagePickerControllerDelegate & UINavigationCo
             addImageButton.setBackgroundImage(image, for: .normal)
         }
         picker.dismiss(animated: true, completion: nil)
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
