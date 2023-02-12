@@ -24,6 +24,7 @@ final class MainViewModel: MainScreenProtocol {
     var voiceManager = VoiceRecordManager()
 
     func startRecording(completion: @escaping () -> Void) {
+        UserDefaults.standard.set(VoiceRecordManager.countVoice, forKey: "numberVoice")
         let fileName = voiceManager.getDirectory().appendingPathComponent("\(VoiceRecordManager.countVoice).m4a")
         let setting = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
