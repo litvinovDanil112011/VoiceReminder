@@ -24,4 +24,20 @@ class CreatorViews {
         button.titleLabel?.textAlignment = .center
         return button
     }
+    
+    static func configureTextField() -> UITextField {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.layer.masksToBounds = false
+        textField.backgroundColor = .systemGray5
+        textField.layer.shadowOffset = CGSize(width: 8, height: 8)
+        textField.layer.shadowColor = UIColor.black.cgColor
+        textField.layer.shadowRadius = 40
+        textField.layer.shadowOpacity = 0.1
+        textField.layer.cornerRadius = 8
+        textField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
+        textField.placeholder = "Введите текст"
+        textField.textAlignment = .center
+        return textField
+    }
 }
