@@ -26,9 +26,14 @@ extension EventsViewController {
             addVoiceButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1 / 5),
             
             saveEvent.topAnchor.constraint(equalTo: addVoiceButton.bottomAnchor, constant: 15),
-            saveEvent.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1 / 1.2),
-            saveEvent.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            saveEvent.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1 / 5)
+            saveEvent.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1 / 2.65),
+            saveEvent.leftAnchor.constraint(equalTo: view.centerXAnchor, constant: 15),
+            saveEvent.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1 / 5),
+            
+            installDate.topAnchor.constraint(equalTo: addVoiceButton.bottomAnchor, constant: 15),
+            installDate.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1 / 2.65),
+            installDate.rightAnchor.constraint(equalTo: view.centerXAnchor, constant: -15),
+            installDate.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1 / 5)
             
         ])
     }

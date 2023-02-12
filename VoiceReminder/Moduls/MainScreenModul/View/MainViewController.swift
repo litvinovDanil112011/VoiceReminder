@@ -27,20 +27,25 @@ final class MainViewController: UIViewController {
     let eventAddButton = CreatorViews.configureButton(
         title: "Создать напоминание",
         color: .red)
+    let listEventButton = CreatorViews.configureButton(
+        title: "Список событий",
+        color: .red)
     //MARK: Actions
     func actionsButton() {
         voiceAddButton.addTarget(self, action: #selector(startRecording), for: .touchUpInside)
         listVoiceButton.addTarget(self, action: #selector(pushListVC), for: .touchUpInside)
-        eventAddButton.addTarget(self, action: #selector(pushListEvent), for: .touchUpInside)
+        eventAddButton.addTarget(self, action: #selector(pushEventVC), for: .touchUpInside)
+        listEventButton.addTarget(self, action: #selector(pushListEventVC), for: .touchUpInside)
     }
-    
     @objc func pushListVC() {
         navigationController?.pushViewController(ListVoiceViewController(), animated: true)
     }
-    @objc func pushListEvent() {
+    @objc func pushEventVC() {
         navigationController?.pushViewController(EventsViewController(), animated: true)
     }
-    
+    @objc func pushListEventVC() {
+        navigationController?.pushViewController(ListEventsViewController(), animated: true)
+    }
     @objc func startRecording() {
         VoiceRecordManager.countVoice += 1
         viewModel?.startRecording(completion: { [weak self] in
@@ -69,8 +74,8 @@ final class MainViewController: UIViewController {
         view.addSubview(voiceAddButton)
         view.addSubview(listVoiceButton)
         view.addSubview(eventAddButton)
+        view.addSubview(listEventButton)
     }
-    
 }
 
 
