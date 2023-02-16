@@ -57,7 +57,6 @@ class EventsViewModel: EventsViewModelProtocol {
         if let numbers = UserDefaults.standard.object(forKey: "numberVoiceEvent") as? Int {
             VoiceRecordManager.countVoice = numbers
         }
-        
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA08E55C299D392200182D47 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08E55B299D392200182D47 /* CalendarViewController.swift */; };
 		FA4A51EA29969699003F0535 /* CreatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A51E929969699003F0535 /* CreatorView.swift */; };
 		FA4A51EC2996999B003F0535 /* MainLayuot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A51EB2996999B003F0535 /* MainLayuot.swift */; };
 		FA4A51F02996A25D003F0535 /* VoiceRecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A51EF2996A25D003F0535 /* VoiceRecordManager.swift */; };
@@ -31,9 +32,12 @@
 		FA7E9635299693B500DE4A9C /* Voice+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E9633299693B500DE4A9C /* Voice+CoreDataClass.swift */; };
 		FA7E9636299693B500DE4A9C /* Voice+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E9634299693B500DE4A9C /* Voice+CoreDataProperties.swift */; };
 		FA7E963D2996943D00DE4A9C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E963C2996943D00DE4A9C /* MainViewModel.swift */; };
+		FA9488A0299E2D5A00FCEE87 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA94889F299E2D5A00FCEE87 /* CalendarViewModel.swift */; };
+		FA9488A2299E2E6A00FCEE87 /* CalendarLayuot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9488A1299E2E6A00FCEE87 /* CalendarLayuot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA08E55B299D392200182D47 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		FA4A51E929969699003F0535 /* CreatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorView.swift; sourceTree = "<group>"; };
 		FA4A51EB2996999B003F0535 /* MainLayuot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLayuot.swift; sourceTree = "<group>"; };
 		FA4A51EF2996A25D003F0535 /* VoiceRecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecordManager.swift; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 		FA7E9633299693B500DE4A9C /* Voice+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Voice+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FA7E9634299693B500DE4A9C /* Voice+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Voice+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FA7E963C2996943D00DE4A9C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		FA94889F299E2D5A00FCEE87 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		FA9488A1299E2E6A00FCEE87 /* CalendarLayuot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarLayuot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA08E558299D38EF00182D47 /* CalandarModul */ = {
+			isa = PBXGroup;
+			children = (
+				FA08E55A299D390400182D47 /* ViewModel */,
+				FA08E559299D38FB00182D47 /* View */,
+			);
+			path = CalandarModul;
+			sourceTree = "<group>";
+		};
+		FA08E559299D38FB00182D47 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA08E55B299D392200182D47 /* CalendarViewController.swift */,
+				FA9488A1299E2E6A00FCEE87 /* CalendarLayuot.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA08E55A299D390400182D47 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA94889F299E2D5A00FCEE87 /* CalendarViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		FA4A51E829969676003F0535 /* Extension + CreatorViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +142,7 @@
 		FA4A51F62997F8AD003F0535 /* New Modul */ = {
 			isa = PBXGroup;
 			children = (
+				FA08E558299D38EF00182D47 /* CalandarModul */,
 				FA4A52092998FD5F003F0535 /* DetailEventModul */,
 				FA4A52082998FD06003F0535 /* ListEventModul */,
 				FA4A51F72998D80C003F0535 /* EventModul */,
@@ -389,7 +422,9 @@
 				FA4A51FB2998D877003F0535 /* EventsViewController.swift in Sources */,
 				FA4A52072998EF68003F0535 /* ExtionsionPhotoLibrary.swift in Sources */,
 				FA4A520E2999263B003F0535 /* ListEventsViewController.swift in Sources */,
+				FA9488A0299E2D5A00FCEE87 /* CalendarViewModel.swift in Sources */,
 				FA7E963D2996943D00DE4A9C /* MainViewModel.swift in Sources */,
+				FA9488A2299E2E6A00FCEE87 /* CalendarLayuot.swift in Sources */,
 				FA4A521529992EE6003F0535 /* DetailViewController.swift in Sources */,
 				FA4A51EC2996999B003F0535 /* MainLayuot.swift in Sources */,
 				FA7E95EF29968C6100DE4A9C /* AppDelegate.swift in Sources */,
@@ -398,6 +433,7 @@
 				FA7E9636299693B500DE4A9C /* Voice+CoreDataProperties.swift in Sources */,
 				FA7E9635299693B500DE4A9C /* Voice+CoreDataClass.swift in Sources */,
 				FA7E95F129968C6100DE4A9C /* SceneDelegate.swift in Sources */,
+				FA08E55C299D392200182D47 /* CalendarViewController.swift in Sources */,
 				FA4A51FF2998E2DB003F0535 /* EventsViewModel.swift in Sources */,
 				FA4A5212299928B9003F0535 /* EventEN+CoreDataProperties.swift in Sources */,
 				FA7E960F29968F8400DE4A9C /* MainViewController.swift in Sources */,

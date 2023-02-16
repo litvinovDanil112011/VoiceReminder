@@ -38,6 +38,17 @@ class CreatorViews {
         textField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         textField.placeholder = "Введите текст"
         textField.textAlignment = .center
+        textField.returnKeyType = .done
         return textField
+    }
+    
+    static func configureCalendar() -> UICalendarView {
+        let calendar = UICalendarView()
+        calendar.translatesAutoresizingMaskIntoConstraints = false
+        calendar.calendar = .current
+        calendar.locale = .current
+        calendar.fontDesign = .default
+//        calendar.visibleDateComponents = DateComponents(calendar: .current)
+        return calendar
     }
 }
