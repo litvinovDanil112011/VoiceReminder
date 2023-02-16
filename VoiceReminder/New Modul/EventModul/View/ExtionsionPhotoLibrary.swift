@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 extension EventsViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     @objc func addImageEvent () {
@@ -31,6 +32,8 @@ extension EventsViewController: UIImagePickerControllerDelegate & UINavigationCo
         //key UIImagePickerControllerEditedImage
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
             addImageButton.setBackgroundImage(image, for: .normal)
+            let managerObject = EventEN()
+            managerObject.imageAT
         }
         picker.dismiss(animated: true, completion: nil)
         

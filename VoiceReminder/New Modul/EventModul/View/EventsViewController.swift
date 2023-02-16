@@ -7,9 +7,10 @@
 
 import UIKit
 import AVFoundation
+import CoreData
 
 class EventsViewController: UIViewController {
-    
+    var coreData = CoreDataManager()
     var viewModel: EventsViewModelProtocol?
     //MARK: Varibes
     let titleEvent = CreatorViews.configureTextField()
@@ -30,6 +31,7 @@ class EventsViewController: UIViewController {
         addImageButton.addTarget(self, action: #selector(addImageEvent), for: .touchUpInside)
         addVoiceButton.addTarget(self, action: #selector(voiceOfRecordor), for: .touchUpInside)
         saveEvent.addTarget(self, action: #selector(saveEventOfList), for: .touchUpInside)
+        installDate.addTarget(self, action: #selector(pushedCalendar), for: .touchUpInside)
     }
     @objc func voiceOfRecordor() {
         viewModel?.isRecorder.toggle()
@@ -44,8 +46,12 @@ class EventsViewController: UIViewController {
     }
     @objc func saveEventOfList() {
         EventVoiceManager.countNameVoice += 1
+        coreData.saveContext()
     }
-
+    @objc func pushedCalendar() {
+        present(CalendarViewController(), animated: true)
+        
+    }
     //MARK: Life cicle
     override func viewDidLoad() {
         super.viewDidLoad()
