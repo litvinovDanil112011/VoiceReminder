@@ -34,7 +34,6 @@ extension EventsViewController {
             installDate.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1 / 2.65),
             installDate.rightAnchor.constraint(equalTo: view.centerXAnchor, constant: -15),
             installDate.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1 / 5)
-            
         ])
     }
 }

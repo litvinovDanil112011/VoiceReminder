@@ -38,7 +38,7 @@ class CreatorViews {
         textField.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 5)
         textField.placeholder = "Введите текст"
         textField.textAlignment = .center
-        textField.returnKeyType = .done
+        textField.returnKeyType = .continue
         return textField
     }
     
