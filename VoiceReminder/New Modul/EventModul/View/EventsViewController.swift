@@ -32,6 +32,17 @@ class EventsViewController: UIViewController {
         addVoiceButton.addTarget(self, action: #selector(voiceOfRecordor), for: .touchUpInside)
         saveEvent.addTarget(self, action: #selector(saveEventOfList), for: .touchUpInside)
         installDate.addTarget(self, action: #selector(pushedCalendar), for: .touchUpInside)
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(keyborgOn)))
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keybordWillShow(natificitions:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keybordWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil)
     }
     @objc func voiceOfRecordor() {
         viewModel?.isRecorder.toggle()
@@ -39,7 +50,7 @@ class EventsViewController: UIViewController {
             if self?.viewModel?.isRecorder == true {
                 self?.addVoiceButton.setTitle("Идёт запись. Для остановки нажмитие еще раз.", for: .normal)
             } else {
-                self?.addVoiceButton.setTitle("Голосовое события записано. Для нового голосового наопоминание нажмите еще раз", for: .normal)
+                self?.addVoiceButton.setTitle("Голосовое события записано. Для нового голосового напоминание нажмите еще раз", for: .normal)
             }
         })
         print("\(EventVoiceManager.countNameVoice)")
@@ -50,7 +61,19 @@ class EventsViewController: UIViewController {
     }
     @objc func pushedCalendar() {
         present(CalendarViewController(), animated: true)
-        
+    }
+    @objc func keyborgOn() {
+        self.view.endEditing(true)
+    }
+    @objc func keybordWillShow(natificitions: NSNotification){
+        if let keyboafrFrame: NSValue = natificitions.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboard = keyboafrFrame.cgRectValue.height
+            let bottonSpace = view.frame.height - (titleEvent.frame.origin.y + titleEvent.frame.height)
+            view.frame.origin.y -= keyboard - bottonSpace + 10
+        }
+    }
+    @objc func keybordWillHide(){
+        view.frame.origin.y = 0
     }
     //MARK: Life cicle
     override func viewDidLoad() {
@@ -69,4 +92,5 @@ class EventsViewController: UIViewController {
         view.addSubview(saveEvent)
         view.addSubview(installDate)
     }
+    
 }
