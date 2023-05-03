@@ -18,7 +18,6 @@ class ManagerCoreData {
         let container = NSPersistentContainer(name: "VoiceReminder")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
@@ -38,5 +37,14 @@ class ManagerCoreData {
             }
         }
     }
-    
+    func feachVoice() -> [Voices] {
+        var voices = [Voices]()
+        let featchResult = NSFetchRequest<NSFetchRequestResult>(entityName: "Voices")
+        do {
+            voices = try context.fetch(featchResult) as! [Voices]
+        } catch {
+            Alert.share.displayAlert(title: "UPS", message: "Не получил массив")
+        }
+        return voices
+    }
 }
