@@ -22,6 +22,7 @@
 		FA69D2122A0186EA0002441C /* Voices+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA69D2102A0186EA0002441C /* Voices+CoreDataProperties.swift */; };
 		FA69D2142A02383B0002441C /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA69D2132A02383B0002441C /* Alert.swift */; };
 		FA69D2182A023F030002441C /* ListScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA69D2172A023F030002441C /* ListScreenViewModel.swift */; };
+		FA8773432A04FEAC001ED3C9 /* EnumSec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8773422A04FEAC001ED3C9 /* EnumSec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		FA69D2102A0186EA0002441C /* Voices+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Voices+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FA69D2132A02383B0002441C /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FA69D2172A023F030002441C /* ListScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScreenViewModel.swift; sourceTree = "<group>"; };
+		FA8773422A04FEAC001ED3C9 /* EnumSec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumSec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		FA69D1CB2A012A090002441C /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				FA8773422A04FEAC001ED3C9 /* EnumSec.swift */,
 				FA69D1CE2A012A200002441C /* Model */,
 				FA69D1CD2A012A180002441C /* ViewModel */,
 				FA69D1CC2A012A130002441C /* View */,
@@ -272,6 +275,7 @@
 				FA69D1B12A01286D0002441C /* AppDelegate.swift in Sources */,
 				FA69D1DC2A012DB30002441C /* MainScreenViewModel.swift in Sources */,
 				FA69D1D32A012BA40002441C /* ManagerCoreData.swift in Sources */,
+				FA8773432A04FEAC001ED3C9 /* EnumSec.swift in Sources */,
 				FA69D1BB2A01286D0002441C /* VoiceReminder.xcdatamodeld in Sources */,
 				FA69D20C2A016E510002441C /* ConfigureViews.swift in Sources */,
 				FA69D1B32A01286D0002441C /* SceneDelegate.swift in Sources */,

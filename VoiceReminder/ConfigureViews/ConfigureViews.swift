@@ -18,13 +18,16 @@ class ConfigureViews {
         return view
     }
     
-    func configureButton(_ title: String, backgroundColor: UIColor, radius: CGFloat?) -> UIButton {
+    func configureButton(_ title: String, backgroundColor: UIColor, radius: CGFloat?, image: UIImage?) -> UIButton {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.clipsToBounds = true
         button.setTitle(title, for: .normal)
         button.backgroundColor = backgroundColor
         button.layer.cornerRadius = radius ?? 10
+        button.tintColor = .white
+        button.setImage(image, for: .normal)
+        button.clipsToBounds = true
         return button
     }
     
