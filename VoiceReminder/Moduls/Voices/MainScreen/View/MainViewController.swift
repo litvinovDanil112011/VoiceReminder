@@ -10,16 +10,29 @@ import UIKit
 final class MainViewController: UIViewController {
     //MARK: Var
     var viewModel: MainScreenViewModelProtocol?
+    private lazy var topSpaser = ConfigureViews.share.configureViewSpaser()
+    private lazy var testONEButton = ConfigureViews.share.configureButton(
+        "test",
+        backgroundColor: .cyan,
+        radius: nil,
+        image: nil)
+    private lazy var testTWOButton = ConfigureViews.share.configureButton(
+        "test2",
+        backgroundColor: .cyan,
+        radius: nil,
+        image: nil)
     private lazy var centerSpaser = ConfigureViews.share.configureViewSpaser()
     private lazy var bottonSpaser = ConfigureViews.share.configureViewSpaser()
-    private lazy var startVoiceRec = ConfigureViews.share.configureButton(
+    private lazy var startVoiceRecButton = ConfigureViews.share.configureButton(
         "Новое голосовое напоминание",
-        backgroundColor: .green,
-        radius: nil)
-    private lazy var listVoise = ConfigureViews.share.configureButton(
+        backgroundColor: .red,
+        radius: nil,
+        image: UIImage(systemName: "mic"))
+    private lazy var listVoiseButton = ConfigureViews.share.configureButton(
         "Cписок голосовых напоминаний",
         backgroundColor: .blue,
-        radius: nil)
+        radius: nil,
+        image: nil)
     //MARK: LIfe cicle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,17 +43,31 @@ final class MainViewController: UIViewController {
     }
     
     private func actions() {
-        listVoise.addTarget(self, action: #selector(pushList), for: .touchUpInside)
-        startVoiceRec.addTarget(self, action: #selector(startRec), for: .touchUpInside)
+        listVoiseButton.addTarget(self, action: #selector(pushList), for: .touchUpInside)
+        startVoiceRecButton.addTarget(self, action: #selector(startRec), for: .touchUpInside)
     }
     @objc func pushList() {
         navigationController?.pushViewController(ListVoiceViewController(), animated: true)
     }
     @objc func startRec() {
         viewModel?.startRecord(completion: { [ weak self ] in
-            self?.startVoiceRec.setTitle("Идёт зпась", for: .normal)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [ weak self] in
-                self?.startVoiceRec.setTitle("Cписок голосовых напоминаний", for: .normal)
+            self?.listVoiseButton.isEnabled = false
+            UIView.animate(withDuration: 2) { [self] in
+                self?.listVoiseButton.transform = CGAffineTransform(translationX: 0, y: -100)
+                self?.startVoiceRecButton.transform = CGAffineTransform(translationX: 0, y: 250)
+                self?.testONEButton.transform = CGAffineTransform(translationX: 0, y: -400)
+                self?.testTWOButton.transform = CGAffineTransform(translationX: 0, y: -450)
+                self?.listVoiseButton.setImage(UIImage(systemName: "mic"), for: .normal)
+                self?.listVoiseButton.setTitle("Идёт зпась", for: .normal)
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + SecondOfTimer.share.secondTemer) { [ weak self] in
+                self?.listVoiseButton.setTitle("Cписок голосовых напоминаний", for: .normal)
+                self?.startVoiceRecButton.transform = .identity
+                self?.listVoiseButton.isEnabled = true
+                self?.listVoiseButton.transform = .identity
+                self?.testONEButton.transform = .identity
+                self?.testTWOButton.transform = .identity
+                self?.startVoiceRecButton.transform = .identity
             }
         })
     }
@@ -48,34 +75,52 @@ final class MainViewController: UIViewController {
     private func setupViews() {
         view.backgroundColor = .white
         title = "Главный экран"
+        view.addSubview(topSpaser)
+        view.addSubview(testONEButton)
+        view.addSubview(testTWOButton)
         view.addSubview(centerSpaser)
-        view.addSubview(startVoiceRec)
+        view.addSubview(startVoiceRecButton)
         view.addSubview(bottonSpaser)
-        view.addSubview(listVoise)
-
+        view.addSubview(listVoiseButton)
+        
     }
     
     private func setupLayuot() {
         NSLayoutConstraint.activate([
+            topSpaser.topAnchor.constraint(equalTo: view.topAnchor),
+            topSpaser.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1 / 9),
+            topSpaser.widthAnchor.constraint(equalTo: view.widthAnchor),
+            topSpaser.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            testONEButton.topAnchor.constraint(equalTo: topSpaser.bottomAnchor),
+            testONEButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            testONEButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1 / 1.2),
+            testONEButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1 / 7),
+            
+            testTWOButton.bottomAnchor.constraint(equalTo: centerSpaser.topAnchor),
+            testTWOButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            testTWOButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1 / 1.2),
+            testTWOButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1 / 7),
+            
             centerSpaser.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             centerSpaser.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             centerSpaser.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1 / 14),
             centerSpaser.widthAnchor.constraint(equalTo: view.widthAnchor),
-
-            listVoise.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            listVoise.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1 / 1.2),
-            listVoise.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1 / 7),
-            listVoise.topAnchor.constraint(equalTo: centerSpaser.bottomAnchor),
+            
+            listVoiseButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            listVoiseButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1 / 1.2),
+            listVoiseButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1 / 7),
+            listVoiseButton.topAnchor.constraint(equalTo: centerSpaser.bottomAnchor),
             
             bottonSpaser.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            bottonSpaser.topAnchor.constraint(equalTo: listVoise.bottomAnchor),
+            bottonSpaser.topAnchor.constraint(equalTo: listVoiseButton.bottomAnchor),
             bottonSpaser.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1 / 10),
             bottonSpaser.widthAnchor.constraint(equalTo: view.widthAnchor),
             
-            startVoiceRec.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            startVoiceRec.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1 / 1.2),
-            startVoiceRec.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1 / 7),
-            startVoiceRec.topAnchor.constraint(equalTo: bottonSpaser.bottomAnchor)
+            startVoiceRecButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            startVoiceRecButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1 / 1.2),
+            startVoiceRecButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1 / 7),
+            startVoiceRecButton.topAnchor.constraint(equalTo: bottonSpaser.bottomAnchor)
             
         ])
     }

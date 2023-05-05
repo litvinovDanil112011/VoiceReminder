@@ -13,7 +13,6 @@ class ListVoiceViewController: UIViewController, UITableViewDataSource, UITableV
     private lazy var listTable = ConfigureViews.share.configureTable()
     var voices = [Voices]()
     var viewModel: ListScreenViewModelProtocol?
-    var audioPlayer: AVAudioPlayer = AVAudioPlayer()
     //MARK: Life cicle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,18 +56,18 @@ extension ListVoiceViewController {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        listTable.deselectRow(at: indexPath, animated: true)
         guard let fileName = voices[indexPath.row].date else { return }
         let path = ManagerVoiceRec.share.getDirectory().appendingPathComponent("\(fileName).m4a")
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: path)
-            audioPlayer.play()
+            viewModel?.audioPlayer = try AVAudioPlayer(contentsOf: path)
+            viewModel?.audioPlayer.play()
         } catch {
             Alert.share.displayAlert(title: "UPS", message: "Не проигрываеться")
         }
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        listTable.deselectRow(at: indexPath, animated: true)
         return .delete
     }
     

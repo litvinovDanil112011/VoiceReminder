@@ -37,10 +37,9 @@ class MainScreenViewModel: MainScreenViewModelProtocol {
             recording = try AVAudioRecorder(url: fileName, settings: settings)
             recording.record()
             completion()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + SecondOfTimer.share.secondTemer) {
                 self.recording.stop()
                 ManagerCoreData.shared.saveContext()
-                
             }
         } catch {
             Alert.share.displayAlert(title: "UPS", message: "Запись не началась")
