@@ -8,13 +8,10 @@
 import Foundation
 import AVFoundation
 
-class ManagerVoiceRec {
+final class ManagerVoiceRec {
     
-   static let share = ManagerVoiceRec()
-        
-//    var recordig: AVAudioSession = AVAudioSession.sharedInstance()
-//    var audioRecorder: AVAudioRecorder = AVAudioRecorder()
-    
+  public static let share = ManagerVoiceRec()
+    private init() {}
     func getDirectory() -> URL {
         let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentsDirectory = path[0]

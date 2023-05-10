@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA42137D2A0BE30600C07DB8 /* ModelCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA42137C2A0BE30600C07DB8 /* ModelCells.swift */; };
+		FA42137F2A0BE57B00C07DB8 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA42137E2A0BE57B00C07DB8 /* SettingCell.swift */; };
 		FA69D1B12A01286D0002441C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA69D1B02A01286D0002441C /* AppDelegate.swift */; };
 		FA69D1B32A01286D0002441C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA69D1B22A01286D0002441C /* SceneDelegate.swift */; };
 		FA69D1B82A01286D0002441C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA69D1B62A01286D0002441C /* Main.storyboard */; };
@@ -23,9 +25,15 @@
 		FA69D2142A02383B0002441C /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA69D2132A02383B0002441C /* Alert.swift */; };
 		FA69D2182A023F030002441C /* ListScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA69D2172A023F030002441C /* ListScreenViewModel.swift */; };
 		FA8773432A04FEAC001ED3C9 /* EnumSec.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8773422A04FEAC001ED3C9 /* EnumSec.swift */; };
+		FA87734A2A064831001ED3C9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8773492A064831001ED3C9 /* SettingsViewController.swift */; };
+		FAECF7C52A0BF70C0012D906 /* TemeVoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECF7C42A0BF70C0012D906 /* TemeVoiceViewController.swift */; };
+		FAECF7C82A0BFAB30012D906 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECF7C72A0BFAB30012D906 /* NotificationCell.swift */; };
+		FAECF7CF2A0BFEFF0012D906 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECF7CE2A0BFEFF0012D906 /* SettingsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA42137C2A0BE30600C07DB8 /* ModelCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCells.swift; sourceTree = "<group>"; };
+		FA42137E2A0BE57B00C07DB8 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		FA69D1AD2A01286D0002441C /* VoiceReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA69D1B02A01286D0002441C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA69D1B22A01286D0002441C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +52,10 @@
 		FA69D2132A02383B0002441C /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FA69D2172A023F030002441C /* ListScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScreenViewModel.swift; sourceTree = "<group>"; };
 		FA8773422A04FEAC001ED3C9 /* EnumSec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumSec.swift; sourceTree = "<group>"; };
+		FA8773492A064831001ED3C9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FAECF7C42A0BF70C0012D906 /* TemeVoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemeVoiceViewController.swift; sourceTree = "<group>"; };
+		FAECF7C72A0BFAB30012D906 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		FAECF7CE2A0BFEFF0012D906 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +69,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA42137B2A0BE2F100C07DB8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA42137C2A0BE30600C07DB8 /* ModelCells.swift */,
+				FAECF7CE2A0BFEFF0012D906 /* SettingsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		FA69D1A42A01286D0002441C = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +130,8 @@
 		FA69D1C92A0129F70002441C /* Moduls */ = {
 			isa = PBXGroup;
 			children = (
+				FAECF7C32A0BF6E80012D906 /* TimeVoiceScreen */,
+				FA8773462A064807001ED3C9 /* SettingsScreen */,
 				FA69D1D42A012CF20002441C /* Voices */,
 			);
 			path = Moduls;
@@ -117,6 +140,7 @@
 		FA69D1CA2A0129FF0002441C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				FA8773422A04FEAC001ED3C9 /* EnumSec.swift */,
 				FA69D1D22A012BA40002441C /* ManagerCoreData.swift */,
 				FA69D1DD2A01369B0002441C /* ManagerVoice.swift */,
 				FA69D2132A02383B0002441C /* Alert.swift */,
@@ -127,7 +151,6 @@
 		FA69D1CB2A012A090002441C /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				FA8773422A04FEAC001ED3C9 /* EnumSec.swift */,
 				FA69D1CE2A012A200002441C /* Model */,
 				FA69D1CD2A012A180002441C /* ViewModel */,
 				FA69D1CC2A012A130002441C /* View */,
@@ -199,6 +222,49 @@
 				FA69D20B2A016E510002441C /* ConfigureViews.swift */,
 			);
 			path = ConfigureViews;
+			sourceTree = "<group>";
+		};
+		FA8773462A064807001ED3C9 /* SettingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FA42137B2A0BE2F100C07DB8 /* ViewModel */,
+				FA8773472A064812001ED3C9 /* View */,
+				FAECF7CA2A0BFE820012D906 /* TimeVoiceCell */,
+				FAECF7D02A0C019E0012D906 /* NotificationCell */,
+			);
+			path = SettingsScreen;
+			sourceTree = "<group>";
+		};
+		FA8773472A064812001ED3C9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA8773492A064831001ED3C9 /* SettingsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAECF7C32A0BF6E80012D906 /* TimeVoiceScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FAECF7C42A0BF70C0012D906 /* TemeVoiceViewController.swift */,
+			);
+			path = TimeVoiceScreen;
+			sourceTree = "<group>";
+		};
+		FAECF7CA2A0BFE820012D906 /* TimeVoiceCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA42137E2A0BE57B00C07DB8 /* SettingCell.swift */,
+			);
+			path = TimeVoiceCell;
+			sourceTree = "<group>";
+		};
+		FAECF7D02A0C019E0012D906 /* NotificationCell */ = {
+			isa = PBXGroup;
+			children = (
+				FAECF7C72A0BFAB30012D906 /* NotificationCell.swift */,
+			);
+			path = NotificationCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,14 +342,20 @@
 				FA69D1DC2A012DB30002441C /* MainScreenViewModel.swift in Sources */,
 				FA69D1D32A012BA40002441C /* ManagerCoreData.swift in Sources */,
 				FA8773432A04FEAC001ED3C9 /* EnumSec.swift in Sources */,
+				FA42137D2A0BE30600C07DB8 /* ModelCells.swift in Sources */,
+				FAECF7CF2A0BFEFF0012D906 /* SettingsViewModel.swift in Sources */,
 				FA69D1BB2A01286D0002441C /* VoiceReminder.xcdatamodeld in Sources */,
 				FA69D20C2A016E510002441C /* ConfigureViews.swift in Sources */,
 				FA69D1B32A01286D0002441C /* SceneDelegate.swift in Sources */,
 				FA69D1DE2A01369B0002441C /* ManagerVoice.swift in Sources */,
 				FA69D1D12A012A6E0002441C /* MainViewController.swift in Sources */,
+				FAECF7C82A0BFAB30012D906 /* NotificationCell.swift in Sources */,
+				FA42137F2A0BE57B00C07DB8 /* SettingCell.swift in Sources */,
+				FA87734A2A064831001ED3C9 /* SettingsViewController.swift in Sources */,
 				FA69D2182A023F030002441C /* ListScreenViewModel.swift in Sources */,
 				FA69D2142A02383B0002441C /* Alert.swift in Sources */,
 				FA69D2122A0186EA0002441C /* Voices+CoreDataProperties.swift in Sources */,
+				FAECF7C52A0BF70C0012D906 /* TemeVoiceViewController.swift in Sources */,
 				FA69D20E2A0175520002441C /* ListVoiceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

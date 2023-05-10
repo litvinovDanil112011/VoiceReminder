@@ -8,12 +8,11 @@
 import Foundation
 import CoreData
 
-class ManagerCoreData {
+final class ManagerCoreData {
     
-    static let shared = ManagerCoreData()
-    
+    public static let shared = ManagerCoreData()
+    private init() {}
     // MARK: - Core Data stack
-
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "VoiceReminder")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -41,10 +40,21 @@ class ManagerCoreData {
         var voices = [Voices]()
         let featchResult = NSFetchRequest<NSFetchRequestResult>(entityName: "Voices")
         do {
-            voices = try context.fetch(featchResult) as! [Voices]
+            voices = try context.fetch(featchResult) as? [Voices] ?? []
         } catch {
-            Alert.share.displayAlert(title: "UPS", message: "Не получил массив")
+            print(error)
         }
         return voices
+    }
+    
+    func deleteAll() {
+        var voices = [Voices]()
+        let featchResult = NSFetchRequest<NSFetchRequestResult>(entityName: "Voices")
+        do {
+            voices = try context.fetch(featchResult) as? [Voices] ?? []
+            voices.forEach { context.delete($0) }
+        } catch {
+            print(error)
+        }
     }
 }

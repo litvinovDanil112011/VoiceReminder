@@ -14,12 +14,12 @@ final class MainViewController: UIViewController {
     private lazy var testONEButton = ConfigureViews.share.configureButton(
         "test",
         backgroundColor: .cyan,
-        radius: nil,
+        radius: 30,
         image: nil)
     private lazy var testTWOButton = ConfigureViews.share.configureButton(
         "test2",
         backgroundColor: .cyan,
-        radius: nil,
+        radius: 30,
         image: nil)
     private lazy var centerSpaser = ConfigureViews.share.configureViewSpaser()
     private lazy var bottonSpaser = ConfigureViews.share.configureViewSpaser()
@@ -40,8 +40,9 @@ final class MainViewController: UIViewController {
         setupLayuot()
         actions()
         viewModel = MainScreenViewModel()
+        setupBarItems()
     }
-    
+    //MARK: ACtions
     private func actions() {
         listVoiseButton.addTarget(self, action: #selector(pushList), for: .touchUpInside)
         startVoiceRecButton.addTarget(self, action: #selector(startRec), for: .touchUpInside)
@@ -53,13 +54,18 @@ final class MainViewController: UIViewController {
         viewModel?.startRecord(completion: { [ weak self ] in
             self?.listVoiseButton.isEnabled = false
             UIView.animate(withDuration: 2) { [self] in
+                self?.listVoiseButton.setImage(UIImage(systemName: "mic"), for: .normal)
+                self?.listVoiseButton.setTitle("Идёт запись", for: .normal)
                 self?.listVoiseButton.transform = CGAffineTransform(translationX: 0, y: -100)
                 self?.startVoiceRecButton.transform = CGAffineTransform(translationX: 0, y: 250)
                 self?.testONEButton.transform = CGAffineTransform(translationX: 0, y: -400)
                 self?.testTWOButton.transform = CGAffineTransform(translationX: 0, y: -450)
-                self?.listVoiseButton.setImage(UIImage(systemName: "mic"), for: .normal)
-                self?.listVoiseButton.setTitle("Идёт зпась", for: .normal)
             }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + SecondOfTimer.share.secondTemer - 2) {
+                self?.listVoiseButton.setTitle("Голосовое напоминание сохранено", for: .normal)
+            }
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + SecondOfTimer.share.secondTemer) { [ weak self] in
                 self?.listVoiseButton.setTitle("Cписок голосовых напоминаний", for: .normal)
                 self?.startVoiceRecButton.transform = .identity
@@ -71,7 +77,10 @@ final class MainViewController: UIViewController {
             }
         })
     }
-    
+    @objc func pushSettings() {
+        navigationController?.pushViewController(SettingsViewController(), animated: true)
+    }
+    //MARK: setupViews
     private func setupViews() {
         view.backgroundColor = .white
         title = "Главный экран"
@@ -84,7 +93,33 @@ final class MainViewController: UIViewController {
         view.addSubview(listVoiseButton)
         
     }
+    //MARK: setupBarItems
+    private func setupBarItems() {
+        let settingScreen = UIBarButtonItem(
+            image: UIImage(systemName: "gearshape.2"),
+            style: .plain,
+            target: self,
+            action: nil)
+        navigationItem.rightBarButtonItem = settingScreen
+        settingScreen.tintColor = .black
+        settingScreen.backgroundImage(for: .normal, barMetrics: .compact)
+        settingScreen.menu = addMenu()
+    }
+    //MENU setting
+   private func addMenu() -> UIMenu {
+        let menuItems = UIMenu(title: "", children: [
+            UIAction(title: "Нacтройки", image: UIImage(systemName: "gearshape"), handler: { _ in
+                self.navigationController?.pushViewController(SettingsViewController(), animated: true)
+            }),
+            // для добавление в списка в меню
+//            UIAction(title: "Нacтройки", image: UIImage(systemName: "gearshape"), handler: { _ in
+//                self.navigationController?.pushViewController(SettingsViewController(), animated: true)
+//            })
+        ])
+        return menuItems
+    }
     
+    //MARK: LAYUOT
     private func setupLayuot() {
         NSLayoutConstraint.activate([
             topSpaser.topAnchor.constraint(equalTo: view.topAnchor),
@@ -121,7 +156,7 @@ final class MainViewController: UIViewController {
             startVoiceRecButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1 / 1.2),
             startVoiceRecButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1 / 7),
             startVoiceRecButton.topAnchor.constraint(equalTo: bottonSpaser.bottomAnchor)
-            
         ])
     }
+    
 }

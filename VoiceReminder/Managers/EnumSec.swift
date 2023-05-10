@@ -8,7 +8,7 @@
 import Foundation
 
 
-class SecondOfTimer {
+final class SecondOfTimer {
     static let share = SecondOfTimer()
     enum SecondOfRecording: Int {
         case fiveSec = 5
@@ -16,7 +16,7 @@ class SecondOfTimer {
         case tenFive = 15
         case twinty = 20
     }
-    let secondTemer = DispatchTimeInterval.seconds(SecondOfRecording.fiveSec.rawValue)
-}
+    let secondTemer = DispatchTimeInterval.seconds(SecondOfRecording.tenSec.rawValue)
     
+}
 
