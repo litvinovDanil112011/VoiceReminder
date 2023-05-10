@@ -10,10 +10,14 @@ import AVFAudio
 
 protocol ListScreenViewModelProtocol {
     var audioPlayer: AVAudioPlayer { get set }
+    func deleteAllVoice()
 }
 
-class ListScreenViewModel: ListScreenViewModelProtocol {
+final class ListScreenViewModel: ListScreenViewModelProtocol {
     
     var audioPlayer: AVAudioPlayer = AVAudioPlayer()
     
+    func deleteAllVoice() {
+        ManagerCoreData.shared.deleteAll()
+    }
 }

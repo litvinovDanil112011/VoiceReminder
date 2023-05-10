@@ -15,7 +15,7 @@ protocol MainScreenViewModelProtocol {
     func getNameFile() -> String
 }
 
-class MainScreenViewModel: MainScreenViewModelProtocol {
+final class MainScreenViewModel: MainScreenViewModelProtocol {
     
     var session: AVAudioSession = AVAudioSession()
     var recording: AVAudioRecorder = AVAudioRecorder()
@@ -42,7 +42,7 @@ class MainScreenViewModel: MainScreenViewModelProtocol {
                 ManagerCoreData.shared.saveContext()
             }
         } catch {
-            Alert.share.displayAlert(title: "UPS", message: "Запись не началась")
+            print(error)
         }
     }
     
@@ -76,5 +76,5 @@ class MainScreenViewModel: MainScreenViewModelProtocol {
         let date = "\(day) \(dateResult)"
         return date
     }
-    
+
 }

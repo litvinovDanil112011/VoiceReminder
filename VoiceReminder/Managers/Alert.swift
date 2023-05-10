@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-class Alert: UIViewController {
+final class Alert {
     
-    static let share = Alert()
-    
-    func displayAlert(title: String, message: String) {
+    public static let share = Alert()
+  
+    func displayAlert(title: String, message: String) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "dismiss", style: .default))
-        present(alert, animated: false)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        return alert
     }
 }
