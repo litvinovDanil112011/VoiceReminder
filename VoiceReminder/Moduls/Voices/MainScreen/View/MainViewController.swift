@@ -51,9 +51,10 @@ final class MainViewController: UIViewController {
         navigationController?.pushViewController(ListVoiceViewController(), animated: true)
     }
     @objc func startRec() {
+        let seconds = SecondOfTimer.share.pushSecond()
         viewModel?.startRecord(completion: { [ weak self ] in
             self?.listVoiseButton.isEnabled = false
-            UIView.animate(withDuration: 2) { [self] in
+            UIView.animate(withDuration: 2) { [ weak self] in
                 self?.listVoiseButton.setImage(UIImage(systemName: "mic"), for: .normal)
                 self?.listVoiseButton.setTitle("Идёт запись", for: .normal)
                 self?.listVoiseButton.transform = CGAffineTransform(translationX: 0, y: -100)
@@ -62,11 +63,12 @@ final class MainViewController: UIViewController {
                 self?.testTWOButton.transform = CGAffineTransform(translationX: 0, y: -450)
             }
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + SecondOfTimer.share.secondTemer - 2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + SecondOfTimer.share.getSecind(sec: seconds) - 2) {
                 self?.listVoiseButton.setTitle("Голосовое напоминание сохранено", for: .normal)
             }
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + SecondOfTimer.share.secondTemer) { [ weak self] in
+            DispatchQueue.main.asyncAfter(deadline: .now() + SecondOfTimer.share.getSecind(sec: seconds))
+            {  [ weak self] in
                 self?.listVoiseButton.setTitle("Cписок голосовых напоминаний", for: .normal)
                 self?.startVoiceRecButton.transform = .identity
                 self?.listVoiseButton.isEnabled = true

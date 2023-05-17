@@ -97,7 +97,7 @@ extension ListVoiceViewController {
         let cell = listTable.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let dateName = voices[indexPath.row]
         cell.textLabel?.text = dateName.date
-        cell.textLabel?.textAlignment = .center
+        cell.textLabel?.textAlignment = .natural
         return cell
     }
     
