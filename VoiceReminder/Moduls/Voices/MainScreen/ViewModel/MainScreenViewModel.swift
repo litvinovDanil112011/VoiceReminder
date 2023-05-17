@@ -37,7 +37,7 @@ final class MainScreenViewModel: MainScreenViewModelProtocol {
             recording = try AVAudioRecorder(url: fileName, settings: settings)
             recording.record()
             completion()
-            DispatchQueue.main.asyncAfter(deadline: .now() + SecondOfTimer.share.secondTemer) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + SecondOfTimer.share.getSecind(sec: SecondOfTimer.share.pushSecond())) {
                 self.recording.stop()
                 ManagerCoreData.shared.saveContext()
             }

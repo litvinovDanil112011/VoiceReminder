@@ -12,11 +12,8 @@ final class SettingCell: UITableViewCell {
     static let id = "SettingCell"
      lazy var titleCell = ConfigureViews.share.configureLabel(
         title: nil)
-     lazy var buttonCell = ConfigureViews.share.configureButton(
-        nil,
-        backgroundColor: .blue,
-        radius: nil,
-        image: nil)
+    lazy var seconfTitle = ConfigureViews.share.configureLabel(title: nil)
+    
     //MARK: LifeCicle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -27,18 +24,20 @@ final class SettingCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    //MARK: Func
-    func configure(with title: String, titleButton: String) {
-        titleCell.text = title
-        buttonCell.setTitle(titleButton, for: .normal) 
-    }
     
+    @objc func pushTimeList() {
+        print("pushTimeList")
+    }
+    //MARK: Func
+    func configure(with title: String, timeSec: String) {
+        titleCell.text = title
+        seconfTitle.text = timeSec
+    }
     
     //MARK: Setup
     private func setupCell() {
         contentView.addSubview(titleCell)
-        contentView.addSubview(buttonCell)
-
+        contentView.addSubview(seconfTitle)
     }
     
     private func setupLayuot() {
@@ -46,8 +45,8 @@ final class SettingCell: UITableViewCell {
             titleCell.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             titleCell.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 15),
             
-            buttonCell.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            buttonCell.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -15),
+            seconfTitle.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            seconfTitle.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -15)
         ])
     }
 }
