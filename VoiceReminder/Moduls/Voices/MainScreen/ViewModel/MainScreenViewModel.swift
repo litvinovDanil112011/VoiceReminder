@@ -13,13 +13,17 @@ protocol MainScreenViewModelProtocol {
     var recording: AVAudioRecorder { get set }
     func startRecord(completion: @escaping() ->(Void))
     func getNameFile() -> String
+    func startTimer()
+    var second: Int { get set }
 }
 
 final class MainScreenViewModel: MainScreenViewModelProtocol {
     
     var session: AVAudioSession = AVAudioSession()
     var recording: AVAudioRecorder = AVAudioRecorder()
-            
+    var timer = Timer()
+    var second = SecondOfTimer.share.getSeconds()
+    
     func startRecord(completion: @escaping () -> (Void)) {
         let currentDate = getNameFile()
         let newDate = Voices(context: ManagerCoreData.shared.context)
@@ -37,7 +41,7 @@ final class MainScreenViewModel: MainScreenViewModelProtocol {
             recording = try AVAudioRecorder(url: fileName, settings: settings)
             recording.record()
             completion()
-            DispatchQueue.main.asyncAfter(deadline: .now() + SecondOfTimer.share.getSecind(sec: SecondOfTimer.share.pushSecond())) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + SecondOfTimer.share.getSecind(sec: second)) {
                 self.recording.stop()
                 ManagerCoreData.shared.saveContext()
             }
@@ -76,5 +80,16 @@ final class MainScreenViewModel: MainScreenViewModelProtocol {
         let date = "\(day) \(dateResult)"
         return date
     }
-
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerActions), userInfo: nil, repeats: true)
+    }
+    
+    @objc func timerActions() {
+        second -= 1
+        print("\(second)")
+        if second <= 0 {
+            timer.invalidate()
+        }
+    }
 }

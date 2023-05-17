@@ -11,14 +11,13 @@ import Foundation
 final class SecondOfTimer {
     
     static let share = SecondOfTimer()
-    
     var second = 5
-    
-    func saveSecond() {
+
+    func setSeconds() {
         UserDefaults.standard.set(second, forKey: "second")
     }
     
-    func pushSecond() -> Int {
+    func getSeconds() -> Int {
         let second = UserDefaults.standard.object(forKey: "second")
         return second as? Int ?? 0
     }
@@ -32,5 +31,7 @@ final class SecondOfTimer {
         let secStr = String(sec)
         return secStr
     }
+    
+    
 }
 

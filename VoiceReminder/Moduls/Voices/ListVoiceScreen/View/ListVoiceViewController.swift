@@ -52,7 +52,7 @@ final class ListVoiceViewController: UIViewController, UITableViewDataSource, UI
                                 self?.present(actionsSheets, animated: true)
                             }
                         }),
-            UIAction(title: "Удалить выбранные", image: UIImage(systemName: "trash"), handler: { _ in
+            UIAction(title: "Пока не выбпано", image: UIImage(systemName: "person"), handler: { _ in
                 self.dismiss(animated: false, completion: {
                     let alert = Alert.share.displayAlert(title: "Кнопка в разработке", message: "Не забудь её сделать, она очень важна")
                     self.present(alert, animated: true)
