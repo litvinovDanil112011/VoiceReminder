@@ -51,16 +51,16 @@ final class MainViewController: UIViewController {
         navigationController?.pushViewController(ListVoiceViewController(), animated: true)
     }
     @objc func startRec() {
-        let seconds = SecondOfTimer.share.pushSecond()
+        let seconds = SecondOfTimer.share.getSeconds()
         viewModel?.startRecord(completion: { [ weak self ] in
             self?.listVoiseButton.isEnabled = false
-            UIView.animate(withDuration: 2) { [ weak self] in
-                self?.listVoiseButton.setImage(UIImage(systemName: "mic"), for: .normal)
-                self?.listVoiseButton.setTitle("Идёт запись", for: .normal)
+            UIView.animate(withDuration: 1) { [ weak self] in
                 self?.listVoiseButton.transform = CGAffineTransform(translationX: 0, y: -100)
                 self?.startVoiceRecButton.transform = CGAffineTransform(translationX: 0, y: 250)
-                self?.testONEButton.transform = CGAffineTransform(translationX: 0, y: -400)
-                self?.testTWOButton.transform = CGAffineTransform(translationX: 0, y: -450)
+                self?.testONEButton.transform = CGAffineTransform(translationX: -400, y: 0)
+                self?.testTWOButton.transform = CGAffineTransform(translationX: 400, y: 0)
+                self?.listVoiseButton.setTitle("Идёт запись, время записи \(seconds) секунд", for: .normal)
+                self?.listVoiseButton.tintColor = .white
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + SecondOfTimer.share.getSecind(sec: seconds) - 2) {

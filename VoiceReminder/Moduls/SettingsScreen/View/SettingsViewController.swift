@@ -43,11 +43,13 @@ extension SettingsViewController: UITableViewDelegate {
         switch cells?.cellType {
         case .timeSetting:
             guard let cell = settingsTable.dequeueReusableCell(withIdentifier: SettingCell.id, for: indexPath) as? SettingCell else { return UITableViewCell() }
-            cell.configure(with: cells?.titleCell ?? "No data", timeSec: "\(SecondOfTimer.share.pushSecond()) Cекунд")
+            cell.configure(with: cells?.titleCell ?? "No data", timeSec: "\(SecondOfTimer.share.getSeconds()) Cекунд")
+//            tableView.rowHeight = 100
             return cell
         case .notificationCell:
             guard let cell = settingsTable.dequeueReusableCell(withIdentifier: NotificationCell.id, for: indexPath) as? NotificationCell else { return UITableViewCell() }
             cell.configure(with: cells?.titleCell ?? "No data")
+//            tableView.rowHeight = 50
             return cell
         case .none:
             return UITableViewCell()
@@ -63,7 +65,8 @@ extension SettingsViewController: UITableViewDelegate {
                     self?.settingsTable.reloadData()
                 }) ?? UIViewController(), animated: true)
             case .notificationCell:
-                print("\(SecondOfTimer.share.second)")
+                let alert = Alert.share.displayAlert(title: "Кнопка в разработке", message: "Надо сделать её но пока не знаю что в ней сделать")
+                present(alert, animated: true)
             case .none:
                 let alert = Alert.share.displayAlert(title: "UPS", message: "Перейти по ячейки нельзя")
                 present(alert, animated: true)
